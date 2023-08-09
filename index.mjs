@@ -14,7 +14,9 @@ app.use('/static', express.static("public"));
 // routes
 app.use('/players',router);
 
-
+app.get('/',(req,res)=>{
+    res.render("index.ejs")
+})
 app.listen(4000, () => {
 console.log('Server started on port 4000');
 });

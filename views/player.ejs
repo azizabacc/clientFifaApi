@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href=/static/css/player.css>
 </head>
-<body>
-    <h1>player profil</h1>
-    <div class="playerCard">
-        <div class="player">
+<body class="bg-black w-screen h-screen">
+    <div id="playersContainer" class="w-full flex flex-col items-center">
+    <h1 class="font-sans hover:font-serif">player profil</h1>
+    <div class="playerCard flex flex-col items-center bg-[#1e293b] text-[#e2e8f0] w-4/5 m-1 rounded-md" >
+        <span class="hidden"><%= player.playerId %></span>
+
+        <div class="player ">
             <img src=" <%= player.playerImg %>" alt="player Picture">
-            <p><%= player.name %></p>
+            <p class="text-center"><%= player.name %></p>
         </div>
-        <div class="nationality">
+        <div class="nationality flex ">
             <p><%= player.nationality %></p>
             <img src=" <%= player.flagImg %>" alt="">
         </div>
-        <div class="club">
+        <div class="club flex items-center ">
             <p><%= player.club %></p>
-            <img src=" <%= player.clubImg %>" alt="">
+            <img class="w-10" src=" <%= player.clubImg %>" alt="">
         </div>
-        <p class="overallRating"><%= player.overallRating %></p>
+        <p class="overallRating text-center "><%= player.overallRating %></p>
 
     </div>
-    <h2>Hi, I am <%= player.name %></h2>
+</div>
+    
 
 </body>
 </html>

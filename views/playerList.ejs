@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href=/static/css/playersList.css>
 </head>
-<body>
-    <h1>player list</h1>
+<body class="bg-black w-screen h-screen">
+ 
+    <div id="playersContainer" class="w-full flex flex-col items-center">
+    <% for(let i=0; i < players.length; i++) { %>
+        <div class="playerCard flex flex-col items-center bg-[#1e293b] text-[#e2e8f0] w-4/5 m-1 rounded-md" >
+            <span class="hidden"><%= players[i].playerId %></span>
+
+            <div class="player ">
+                <img src=" <%= players[i].playerImg %>" alt="player Picture">
+                <p class="text-center"><%= players[i].name %></p>
+            </div>
+            <div class="nationality flex ">
+                <p><%= players[i].nationality %></p>
+                <img src=" <%= players[i].flagImg %>" alt="">
+            </div>
+            <div class="club flex items-center ">
+                <p><%= players[i].club %></p>
+                <img class="w-10" src=" <%= players[i].clubImg %>" alt="">
+            </div>
+            <p class="overallRating text-center "><%= players[i].overallRating %></p>
+    
+        </div>
+     <% } %>
+    </div>
+    <script src="/static/js/playersList.js"></script>
+
 </body>
 </html>
